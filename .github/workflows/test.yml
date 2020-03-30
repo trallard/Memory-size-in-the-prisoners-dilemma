@@ -1,4 +1,4 @@
-name: Tests
+name: "Running src tests"
 
 on:
   push:
@@ -8,8 +8,8 @@ on:
 
 jobs:
   tests:
-    runs-on: "ubuntu-latest"
     name: "Python ${{ matrix.python-version }}"
+    runs-on: "ubuntu-latest"
 
     strategy:
       matrix:
