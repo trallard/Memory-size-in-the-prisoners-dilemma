@@ -1,11 +1,11 @@
 # This runs the tests for the source code
-name: "Running src tests"
+name: Tests
 
 on:
   push:
-    branches: ["feature/*"]
-  pull_request:
     branches: ["master"]
+  pull_request:
+    branches: ["features/*"]
 
 # a workflow run is made up pd
 jobs:
@@ -24,16 +24,25 @@ jobs:
       - continue-on-error: false
       - uses: "actions/checkout@v2"
 
-      - name: "Setting Python"
-        uses: "actions/setup-python@v1"
+      - name: "Setting Python - uses conda"
+        uses: s-weigand/setup-conda@v1
         with:
-          python-version: "${{ matrix.python-version }}"
+          update-conda: true
+          python-version: $ {{ matrix.python-version }}
+          conda-channels: anaconda
 
       - name: "Install dependencies"
         run: |
+          conda info -a
           set -xe
           python -m pip install --upgrade pip 
           python -m pip install --upgrade tox tox-gh-actions
+          conda env create -f environment.yml
+
+      - name: "Install source code"
+        run: |
+          source activate opt-mo
+          python setup.py opt-mo
 
       - name: "Run tox targets for ${{ matrix.python-version }}"
         run: "python -m tox"
