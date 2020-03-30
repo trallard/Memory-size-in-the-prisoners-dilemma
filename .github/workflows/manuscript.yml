@@ -30,5 +30,5 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add -f ${{ github.workspace }}/main.pdf
-          git commit -m "Manuscript updated" 
+          git commit -m "📝 Manuscript updated - through GH actions" 
           git push -q -f https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }} ${GITHUB_REF#refs/heads/}

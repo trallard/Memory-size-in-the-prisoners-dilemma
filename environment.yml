@@ -1,10 +1,11 @@
-name: opt-mo
+name: optmo
 channels:
   - defaults
 dependencies:
   # - python=3.6.7
   - numpy=1.15.4
   - pandas=0.23.4
+  - pip
   - pip:
       - attrs==19.1.0
       - axelrod==4.4.0

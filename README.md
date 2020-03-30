@@ -2,6 +2,8 @@ Stability of defection, optimisation of strategies and the limits of
 memory in the Prisoner's Dilemma.
 --------------------------------------
 
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/trallard/Memory-size-in-the-prisoners-dilemma/master)
+
 **Authors**: @Nikoleta-v3 @drvinceknight
 
 This repository contains the source code for a paper titled 
