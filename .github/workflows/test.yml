@@ -1,48 +1,32 @@
-# This runs the tests for the source code
-name: Tests
+name: Test workflow
 
 on:
   push:
-    branches: ["master"]
+    branches: ["feature/*"]
   pull_request:
-    branches: ["features/*"]
+    branches: ["master"]
 
-# a workflow run is made up pd
 jobs:
-  # This workflows conatins a single job called tests
   tests:
-    name: "Python ${{ matrix.python-version }}"
+    name: "Python ${{matrix.python-version}}"
     runs-on: "ubuntu-latest"
 
     strategy:
       matrix:
-        python-version: ["3.6", "3.7"]
-
-      fail-fast: true
+        python-version: ["3.6", "3.7", "3.8"]
 
     steps:
-      - continue-on-error: false
       - uses: "actions/checkout@v2"
 
-      - name: "Setting Python - uses conda"
-        uses: s-weigand/setup-conda@v1
+      - name: "Setup Python"
+        uses: "actions/setup-python@v1"
         with:
-          update-conda: true
-          python-version: $ {{ matrix.python-version }}
-          conda-channels: anaconda
+          python-version: "${{matrix.python-version}}"
 
       - name: "Install dependencies"
         run: |
-          conda info -a
-          set -xe
-          python -m pip install --upgrade pip 
-          python -m pip install --upgrade tox tox-gh-actions
-          conda env create -f environment.yml
+          python -m pip install --upgrade pip
+          pip install tox tox-gh-actions
 
-      - name: "Install source code"
-        run: |
-          source activate opt-mo
-          python setup.py opt-mo
-
-      - name: "Run tox targets for ${{ matrix.python-version }}"
-        run: "python -m tox"
+      - name: "Run tox targets"
+        run: python -m tox
