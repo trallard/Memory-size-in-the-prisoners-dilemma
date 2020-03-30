@@ -19,8 +19,16 @@ jobs:
         with:
           root_file: main.tex
 
-      - name: "Save artifact"
+      - name: "Upload artifact"
         uses: actions/upload-artifact@v1
         with:
           name: manuscript
-          path: ./main.pdf
+          path: ${{ github.workspace }}/main.pdf
+
+      - name: "Push paper"
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add -f ${{ github.workspace }}/main.pdf
+          git commit -m "Manuscript updated" 
+          git push -q -f https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }} ${GITHUB_REF#refs/heads/}
