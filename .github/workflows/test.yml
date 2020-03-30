@@ -14,11 +14,11 @@ jobs:
     strategy:
       matrix:
         python-version: ["3.6", "3.7", "3.8"]
-      fail-fast:true
+      fail-fast: true
 
     steps:
       - continue-on-error: false
-      
+
       - uses: "actions/checkout@v2"
 
       - name: "Setting Python - uses conda"
