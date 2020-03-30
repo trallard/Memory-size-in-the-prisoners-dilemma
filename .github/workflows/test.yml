@@ -14,19 +14,32 @@ jobs:
     strategy:
       matrix:
         python-version: ["3.6", "3.7", "3.8"]
+      fail-fast:true
 
     steps:
+      - continue-on-error: false
+      
       - uses: "actions/checkout@v2"
 
-      - name: "Setup Python"
-        uses: "actions/setup-python@v1"
+      - name: "Setting Python - uses conda"
+        uses: s-weigand/setup-conda@v1
         with:
-          python-version: "${{matrix.python-version}}"
+          update-conda: true
+          python-version: $ {{ matrix.python-version }}
+          conda-channels: anaconda
 
       - name: "Install dependencies"
         run: |
-          python -m pip install --upgrade pip
-          pip install tox tox-gh-actions
+          conda info -a
+          set -xe
+          python -m pip install --upgrade pip 
+          python -m pip install --upgrade tox tox-gh-actions
+          conda env create -f environment.yml
+
+      - name: "Install source code"
+        run: |
+          source activate opt-mo
+          python setup.py opt-mo
 
       - name: "Run tox targets"
         run: python -m tox
