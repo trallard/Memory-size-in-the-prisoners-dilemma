@@ -1,4 +1,4 @@
-name: Test workflow
+name: CI - tests and lint
 
 on:
   push:
@@ -14,11 +14,8 @@ jobs:
     strategy:
       matrix:
         python-version: ["3.6", "3.7", "3.8"]
-      fail-fast: true
 
     steps:
-      - continue-on-error: false
-
       - uses: "actions/checkout@v2"
 
       - name: "Setting Python - uses conda"
@@ -42,4 +39,4 @@ jobs:
           python setup.py opt-mo
 
       - name: "Run tox targets"
-        run: python -m tox
+        run: "python -m tox"
