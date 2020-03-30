@@ -24,5 +24,4 @@ install:
   - python setup.py develop
 
 script:
-
   - sh test.sh
