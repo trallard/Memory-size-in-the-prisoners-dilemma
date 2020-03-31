@@ -4,6 +4,12 @@ memory in the Prisoner's Dilemma.
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/trallard/Memory-size-in-the-prisoners-dilemma/master)
 
+![CI - tests and lint](https://github.com/trallard/Memory-size-in-the-prisoners-dilemma/workflows/CI%20-%20tests%20and%20lint/badge.svg)
+
+![Notebooks tasks](https://github.com/trallard/Memory-size-in-the-prisoners-dilemma/workflows/Notebooks%20tasks/badge.svg)
+
+![Compile manuscript](https://github.com/trallard/Memory-size-in-the-prisoners-dilemma/workflows/Compile%20manuscript/badge.svg)
+
 **Authors**: @Nikoleta-v3 @drvinceknight
 
 This repository contains the source code for a paper titled 

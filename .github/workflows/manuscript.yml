@@ -2,7 +2,6 @@ name: Compile manuscript
 
 on:
   push:
-    branches: ["feature/*"]
     paths:
       - 'tex/**'
       - 'img/**'
@@ -29,10 +28,10 @@ jobs:
           name: manuscript
           path: ${{ github.workspace }}/main.pdf
 
-      # - name: "Push paper"
-      #   run: |
-      #     git config --local user.email "action@github.com"
-      #     git config --local user.name "GitHub Action bot"
-      #     git add -f ${{ github.workspace }}/main.pdf
-      #     git commit -m "📝 Manuscript updated - through GH actions" 
-      #     git push -q -f https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }} ${GITHUB_REF#refs/heads/}
+      - name: "Push paper"
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action bot"
+          git add -f ${{ github.workspace }}/main.pdf
+          git commit -m "📝 Manuscript updated - through GH actions" 
+          git push -q -f https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }} ${GITHUB_REF#refs/heads/}
