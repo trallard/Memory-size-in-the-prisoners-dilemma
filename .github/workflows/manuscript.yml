@@ -3,6 +3,9 @@ name: Compile manuscript
 on:
   push:
     branches: ["feature/*"]
+    paths:
+      - 'tex/**'
+      - 'img/**'
   pull_request:
     branches: ["master"]
 

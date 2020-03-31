@@ -45,6 +45,7 @@ jobs:
 
       - name: Build book
         run: |
+          conda activate opt-mo
           python -m jupyter book build --config nbs/_config.yml --toc nbs/_toc.yml ./nbs
 
       - name: Deploy to GH Pages
