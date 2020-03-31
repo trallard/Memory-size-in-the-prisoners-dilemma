@@ -32,7 +32,8 @@ jobs:
 
       - name: Install Python dependencies
         run: |
-          sh ./scripts/conda.sh
+          chmod +x
+          ./scripts/conda.sh
           python -m pip install git+git://github.com/executablebookproject/cli.git#egg=master
           python -m pip install datascience
           python -m pip install ghp-import
