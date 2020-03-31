@@ -10,19 +10,6 @@ on:
       - published
 
 jobs:
-  test:
-    runs-on: ubuntu-latest
-    name: "Testing noteboks"
-
-    steps:
-      - continue-on-error: false
-      - uses: actions/checkout@v2
-
-      - name: Set up Python
-        uses: actions/setup-python@v1
-        with:
-          python-version: 3.7
-
   build:
     runs-on: ubuntu-latest
     name: "Publish Jupyterbook"
@@ -45,11 +32,13 @@ jobs:
 
       - name: Build TOC
         run: |
-          jupyter-book build ./nbs
+          jupyter-book build nbs
 
       - name: Deply to GH Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./nbs/_build/html
+          publish_dir: nbs/_build/html
           commit_message: ${{github.event.head_commit.message}}
+          user_name: "GitHub Action bot"
+          user_email: "action@github.com"
