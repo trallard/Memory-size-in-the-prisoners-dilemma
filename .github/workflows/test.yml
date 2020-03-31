@@ -54,8 +54,8 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-conda-
 
-      - name: "Run tox targets"
+      - name: Execute tox targets
         run: |
-        eval "$(conda shell.bash hook)"
-        conda activate opt-mo
-        "python -m tox"
+          eval "$(conda shell.bash hook)"
+          conda activate opt-mo
+          python -m tox
