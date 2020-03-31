@@ -32,8 +32,12 @@ jobs:
 
       - name: Install Python dependencies
         run: |
-          chmod +x ./scripts/conda.sh
-          ./scripts/conda.sh
+          conda env create python=${{ matrix.python-version }} -f environment.yml
+          conda info --envs
+          eval "$(conda shell.bash hook)"
+          conda activate opt-mo
+          which python 
+          python -m ipykernel install --user --name opt-mo
           python -m pip install git+git://github.com/executablebookproject/cli.git#egg=master
           python -m pip install datascience
           python -m pip install ghp-import
