@@ -1,0 +1,765 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Stability of defection, optimisation of strategies and the limits of memory in the PD. &#8212; Stability of defection, optimisation of strategies and the limits of memory in the Prisoner&#39;s Dilemma.</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link rel="stylesheet" href="_static/jupyterbook.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/jupyter-sphinx.css" />
+    <link href="_static/css/index.css" rel="stylesheet">
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .secondtoggle, .tag_hide_input div.cell_input, .tag_hide_output div.cell_output, .tag_hide_cell.cell';</script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Stability of defection, optimisation of strategies and the limits of memory in the PD." href="1_Utility_and_Best responses_to_memory-one_players.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+    
+<div class='top'>
+<button id="navbar-toggler" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#site-navigation" aria-controls="navbar-menu" aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation">
+    <i class="fas fa-bars"></i>
+    <i class="fas fa-arrow-left"></i>
+    <i class="fas fa-arrow-up"></i>
+</button>
+</div>
+
+    <div class="container-fluid">
+      <div class="row">
+          
+
+<div class="col-12 col-md-3 col-xl-3 bd-sidebar show" id="site-navigation">
+    <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  
+  <h1 class="site-logo" id="site-title">Stability of defection, optimisation of strategies and the limits of memory in the Prisoner's Dilemma.</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  
+  <ul class="nav sidenav_l1">
+  <li class="active">
+    <a href="">Stability of defection, optimisation of strategies and the limits of memory in the PD.</a>
+  </li>
+</ul>
+</nav>
+<p class="sidebar_footer">Powered by <a href='https://jupyterbook.org'>Jupyter Book</a></p>
+</div>
+
+
+          
+<div class="d-none d-xl-block col-xl-2 bd-toc">
+
+
+</div>
+
+
+          
+<main class="col py-md-3 pl-md-5 pr-0 bd-content overflow-auto" role="main">
+    
+    
+      <div class="row topbar sticky-top">
+    <button id="navbar-toggler" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#site-navigation" aria-controls="navbar-menu" aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation">
+        <i class="fas fa-bars"></i>
+        <i class="fas fa-arrow-left"></i>
+    </button>
+    <div class="download-buttons-dropdown">
+        <button id="dropdown-button-trigger" class="btn btn-secondary topbarbtn"><i class="fas fa-download"></i></button>
+        <div class="download-buttons">
+            <!-- Download raw file -->
+            <a class="download-buttons" href="_sources/2_Stability_of_defection.ipynb.txt"><button type="button" class="btn btn-secondary topbarbtn">.ipynb</button></a>
+            <!-- Download PDF via print -->
+            <button type="button" id="download-print" class="btn btn-secondary topbarbtn" onClick="window.print()">.pdf</button>
+        </div>
+    </div>
+    
+    
+</div>
+    
+    <div id="main-content" class="row">
+        <div class="col-12 ">
+        
+              <div>
+                
+  <div class="section" id="stability-of-defection-optimisation-of-strategies-and-the-limits-of-memory-in-the-pd">
+<h1>Stability of defection, optimisation of strategies and the limits of memory in the PD.<a class="headerlink" href="#stability-of-defection-optimisation-of-strategies-and-the-limits-of-memory-in-the-pd" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="section" id="stability-of-defection">
+<h1>2. Stability of defection<a class="headerlink" href="#stability-of-defection" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">opt_mo</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
+<span class="kn">import</span> <span class="nn">itertools</span>
+<span class="kn">import</span> <span class="nn">axelrod</span> <span class="k">as</span> <span class="nn">axl</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="stderr docutils container">
+<pre class="stderr literal-block">/usr/share/miniconda/envs/opt-mo/lib/python3.7/site-packages/sklearn/externals/joblib/__init__.py:15: FutureWarning: sklearn.externals.joblib is deprecated in 0.21 and will be removed in 0.23. Please import this functionality directly from joblib, which can be installed with: pip install joblib. If this warning is raised when loading pickled models, you may need to re-serialize those models with scikit-learn 0.21+.
+  warnings.warn(msg, category=FutureWarning)
+/usr/share/miniconda/envs/opt-mo/lib/python3.7/site-packages/sklearn/utils/deprecation.py:144: FutureWarning: The sklearn.metrics.scorer module is  deprecated in version 0.22 and will be removed in version 0.24. The corresponding classes / functions should instead be imported from sklearn.metrics. Anything that cannot be imported from sklearn.metrics is now part of the private API.
+  warnings.warn(message, FutureWarning)
+</pre>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">fractions</span> <span class="kn">import</span> <span class="n">Fraction</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">axelrod.action</span> <span class="kn">import</span> <span class="n">Action</span>
+
+<span class="n">C</span><span class="p">,</span> <span class="n">D</span> <span class="o">=</span> <span class="n">Action</span><span class="o">.</span><span class="n">C</span><span class="p">,</span> <span class="n">Action</span><span class="o">.</span><span class="n">D</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">tqdm</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.transforms</span> <span class="k">as</span> <span class="nn">transforms</span>
+<span class="kn">import</span> <span class="nn">matplotlib</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">warnings</span><span class="p">;</span> <span class="n">warnings</span><span class="o">.</span><span class="n">simplefilter</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">operator</span>
+<span class="kn">import</span> <span class="nn">functools</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sym</span><span class="o">.</span><span class="n">init_printing</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+
+<span class="n">tex</span> <span class="o">=</span> <span class="n">Path</span><span class="o">.</span><span class="n">cwd</span><span class="p">()</span><span class="o">.</span><span class="n">resolve</span><span class="p">()</span><span class="o">.</span><span class="n">joinpath</span><span class="p">(</span><span class="s1">&#39;tex&#39;</span><span class="p">)</span>
+<span class="n">img_path</span> <span class="o">=</span> <span class="n">Path</span><span class="o">.</span><span class="n">cwd</span><span class="p">()</span><span class="o">.</span><span class="n">resolve</span><span class="p">()</span><span class="o">.</span><span class="n">joinpath</span><span class="p">(</span><span class="s1">&#39;img&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">font</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;size&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="s2">&quot;weight&quot;</span><span class="p">:</span> <span class="s2">&quot;bold&quot;</span><span class="p">}</span>
+<span class="n">matplotlib</span><span class="o">.</span><span class="n">rc</span><span class="p">(</span><span class="s2">&quot;font&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">font</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+</div>
+<div class="section" id="analytical-check">
+<h1>Analytical check<a class="headerlink" href="#analytical-check" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">p_1</span><span class="p">,</span> <span class="n">p_2</span><span class="p">,</span> <span class="n">p_3</span><span class="p">,</span> <span class="n">p_4</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s2">&quot;p_1, p_2, p_3, p_4&quot;</span><span class="p">)</span>
+<span class="n">q_1</span><span class="p">,</span> <span class="n">q_2</span><span class="p">,</span> <span class="n">q_3</span><span class="p">,</span> <span class="n">q_4</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s2">&quot;q_1, q_2, q_3, q_4&quot;</span><span class="p">)</span>
+<span class="n">k_1</span><span class="p">,</span> <span class="n">k_2</span><span class="p">,</span> <span class="n">k_3</span><span class="p">,</span> <span class="n">k_4</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s2">&quot;k_1, k_2, k_3, k_4&quot;</span><span class="p">)</span>
+
+<span class="n">p</span><span class="p">,</span> <span class="n">q</span><span class="p">,</span> <span class="n">k</span> <span class="o">=</span> <span class="p">(</span><span class="n">p_1</span><span class="p">,</span> <span class="n">p_2</span><span class="p">,</span> <span class="n">p_3</span><span class="p">,</span> <span class="n">p_4</span><span class="p">),</span> <span class="p">(</span><span class="n">q_1</span><span class="p">,</span> <span class="n">q_2</span><span class="p">,</span> <span class="n">q_3</span><span class="p">,</span> <span class="n">q_4</span><span class="p">),</span> <span class="p">(</span><span class="n">k_1</span><span class="p">,</span> <span class="n">k_2</span><span class="p">,</span> <span class="n">k_3</span><span class="p">,</span> <span class="n">k_4</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_Q_N_derivative</span><span class="p">(</span><span class="n">player</span><span class="p">,</span> <span class="n">opponent</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">player</span><span class="p">)</span>
+    
+    <span class="n">Q</span> <span class="o">=</span> <span class="n">opt_mo</span><span class="o">.</span><span class="n">utility</span><span class="o">.</span><span class="n">quadratic_term_numerator</span><span class="p">(</span><span class="n">opponent</span><span class="p">)</span>
+    <span class="n">c</span> <span class="o">=</span> <span class="n">opt_mo</span><span class="o">.</span><span class="n">utility</span><span class="o">.</span><span class="n">linear_term_numerator</span><span class="p">(</span><span class="n">opponent</span><span class="p">)</span>
+        
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">Q</span><span class="p">)</span> <span class="o">+</span> <span class="n">c</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_Q_N</span><span class="p">(</span><span class="n">player</span><span class="p">,</span> <span class="n">opponent</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">player</span><span class="p">)</span>
+
+    <span class="n">Q</span> <span class="o">=</span> <span class="n">opt_mo</span><span class="o">.</span><span class="n">utility</span><span class="o">.</span><span class="n">quadratic_term_numerator</span><span class="p">(</span><span class="n">opponent</span><span class="p">)</span>
+    <span class="n">c</span> <span class="o">=</span> <span class="n">opt_mo</span><span class="o">.</span><span class="n">utility</span><span class="o">.</span><span class="n">linear_term_numerator</span><span class="p">(</span><span class="n">opponent</span><span class="p">)</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="n">opt_mo</span><span class="o">.</span><span class="n">utility</span><span class="o">.</span><span class="n">constant_term_numerator</span><span class="p">(</span><span class="n">opponent</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">Q</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">T</span><span class="p">)</span> <span class="o">*</span> <span class="mi">1</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">x</span><span class="o">.</span><span class="n">T</span><span class="p">)</span> <span class="o">+</span> <span class="n">a</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_Q_D</span><span class="p">(</span><span class="n">player</span><span class="p">,</span> <span class="n">opponent</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">player</span><span class="p">)</span>
+
+    <span class="n">Q_bar</span> <span class="o">=</span> <span class="n">opt_mo</span><span class="o">.</span><span class="n">utility</span><span class="o">.</span><span class="n">quadratic_term_denominator</span><span class="p">(</span><span class="n">opponent</span><span class="p">)</span>
+    <span class="n">c_bar</span> <span class="o">=</span> <span class="n">opt_mo</span><span class="o">.</span><span class="n">utility</span><span class="o">.</span><span class="n">linear_term_denominator</span><span class="p">(</span><span class="n">opponent</span><span class="p">)</span>
+    <span class="n">a_bar</span> <span class="o">=</span> <span class="n">opt_mo</span><span class="o">.</span><span class="n">utility</span><span class="o">.</span><span class="n">constant_term_denominator</span><span class="p">(</span><span class="n">opponent</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">Q_bar</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">T</span><span class="p">)</span> <span class="o">*</span> <span class="mi">1</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">c_bar</span><span class="p">,</span> <span class="n">x</span><span class="o">.</span><span class="n">T</span><span class="p">)</span> <span class="o">+</span> <span class="n">a_bar</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_Q_D_derivative</span><span class="p">(</span><span class="n">player</span><span class="p">,</span> <span class="n">opponent</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">player</span><span class="p">)</span>
+
+    <span class="n">Q_bar</span> <span class="o">=</span> <span class="n">opt_mo</span><span class="o">.</span><span class="n">utility</span><span class="o">.</span><span class="n">quadratic_term_denominator</span><span class="p">(</span><span class="n">opponent</span><span class="p">)</span>
+    <span class="n">c_bar</span> <span class="o">=</span> <span class="n">opt_mo</span><span class="o">.</span><span class="n">utility</span><span class="o">.</span><span class="n">linear_term_denominator</span><span class="p">(</span><span class="n">opponent</span><span class="p">)</span>
+    <span class="n">a_bar</span> <span class="o">=</span> <span class="n">opt_mo</span><span class="o">.</span><span class="n">utility</span><span class="o">.</span><span class="n">constant_term_denominator</span><span class="p">(</span><span class="n">opponent</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">Q_bar</span><span class="p">)</span> <span class="o">+</span> <span class="n">c_bar</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<p><strong>Check quadratic derivative of</strong></p>
+<p><div class="math notranslate nohighlight">
+\[\frac{1}{2}pQp^T + cp +a \]</div>
+</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">expr</span> <span class="o">=</span> <span class="n">get_Q_N</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">q</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">diff</span> <span class="o">=</span> <span class="p">[</span><span class="n">sym</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">expr</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">p</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">derivatives</span> <span class="o">=</span> <span class="n">get_Q_N_derivative</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">q</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+    <span class="k">assert</span> <span class="p">(</span><span class="n">diff</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">derivatives</span><span class="p">[</span><span class="n">i</span><span class="p">])</span><span class="o">.</span><span class="n">simplify</span><span class="p">()</span> <span class="o">==</span> <span class="mi">0</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<p><strong>Check derivative of utility</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_written_derivative_of_utility</span><span class="p">(</span><span class="n">player</span><span class="p">,</span> <span class="n">opponents</span><span class="p">):</span>
+    <span class="n">sums</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">opponent</span> <span class="ow">in</span> <span class="n">opponents</span><span class="p">:</span>
+        <span class="n">numerator</span> <span class="o">=</span> <span class="p">(</span><span class="n">get_Q_N_derivative</span><span class="p">(</span><span class="n">player</span><span class="p">,</span> <span class="n">opponent</span><span class="p">)</span> <span class="o">*</span> <span class="n">get_Q_D</span><span class="p">(</span><span class="n">player</span><span class="p">,</span> <span class="n">opponent</span><span class="p">)</span> <span class="o">-</span>
+                      <span class="n">get_Q_D_derivative</span><span class="p">(</span><span class="n">player</span><span class="p">,</span> <span class="n">opponent</span><span class="p">)</span> <span class="o">*</span> <span class="n">get_Q_N</span><span class="p">(</span><span class="n">player</span><span class="p">,</span> <span class="n">opponent</span><span class="p">))</span>
+        
+        <span class="n">denominator</span> <span class="o">=</span> <span class="n">get_Q_D</span><span class="p">(</span><span class="n">player</span><span class="p">,</span> <span class="n">opponent</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span>
+        
+        <span class="n">sums</span> <span class="o">+=</span> <span class="n">numerator</span> <span class="o">/</span> <span class="n">denominator</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">sums</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">opponents</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">seed</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">):</span>
+    <span class="n">num_players</span> <span class="o">=</span> <span class="mi">5</span>
+    <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="n">seed</span><span class="p">)</span>
+    <span class="n">opponents</span> <span class="o">=</span> <span class="p">[[</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">)]</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_players</span><span class="p">)]</span>
+    
+    <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="n">seed</span> <span class="o">+</span> <span class="mi">1000</span><span class="p">)</span>
+    <span class="n">player</span> <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">)]</span>
+    
+    <span class="n">written_derivative</span> <span class="o">=</span> <span class="n">get_written_derivative_of_utility</span><span class="p">(</span><span class="n">player</span><span class="p">,</span> <span class="n">opponents</span><span class="p">)</span>
+    
+    <span class="n">utility</span> <span class="o">=</span> <span class="n">opt_mo</span><span class="o">.</span><span class="n">tournament_utility</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">opponents</span><span class="p">)</span>
+    <span class="n">utility_derivative</span> <span class="o">=</span> <span class="p">[</span><span class="n">sym</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">utility</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">p</span><span class="p">]</span>
+    <span class="n">utility_derivative</span> <span class="o">=</span> <span class="p">[</span><span class="n">expr</span><span class="o">.</span><span class="n">subs</span><span class="p">({</span><span class="n">p_1</span><span class="p">:</span> <span class="n">player</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">p_2</span><span class="p">:</span> <span class="n">player</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">p_3</span><span class="p">:</span> <span class="n">player</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">p_4</span><span class="p">:</span> <span class="n">player</span><span class="p">[</span><span class="mi">3</span><span class="p">]})</span> <span class="k">for</span> <span class="n">expr</span>
+                          <span class="ow">in</span> <span class="n">utility_derivative</span><span class="p">]</span>
+    
+    <span class="n">differences</span> <span class="o">=</span> <span class="n">written_derivative</span> <span class="o">-</span> <span class="n">utility_derivative</span>
+    <span class="k">for</span> <span class="n">difference</span> <span class="ow">in</span> <span class="n">differences</span><span class="p">:</span>
+        <span class="k">assert</span> <span class="n">np</span><span class="o">.</span><span class="n">isclose</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">difference</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">opponents</span> <span class="o">=</span> <span class="p">[</span><span class="n">q</span><span class="p">,</span> <span class="n">k</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">utility</span> <span class="o">=</span> <span class="n">opt_mo</span><span class="o">.</span><span class="n">tournament_utility</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">opponents</span><span class="p">)</span>
+<span class="n">derivative_of_utility</span> <span class="o">=</span> <span class="p">[</span><span class="n">sym</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">utility</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">p</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">written_derivative</span> <span class="o">=</span> <span class="n">get_written_derivative_of_utility</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">opponents</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="o">.</span><span class="n">tqdm</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">)):</span>
+    <span class="k">assert</span> <span class="p">(</span><span class="n">written_derivative</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">derivative_of_utility</span><span class="p">[</span><span class="n">i</span><span class="p">])</span><span class="o">.</span><span class="n">simplify</span><span class="p">()</span> <span class="o">==</span> <span class="mi">0</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="stderr docutils container">
+<pre class="stderr literal-block">  0%|          | 0/4 [00:00&lt;?, ?it/s]</pre>
+</div>
+<div class="stderr docutils container">
+<pre class="stderr literal-block"> 25%|██▌       | 1/4 [00:06&lt;00:19,  6.36s/it]</pre>
+</div>
+<div class="stderr docutils container">
+<pre class="stderr literal-block"> 50%|█████     | 2/4 [02:23&lt;01:31, 45.68s/it]</pre>
+</div>
+<div class="stderr docutils container">
+<pre class="stderr literal-block"> 75%|███████▌  | 3/4 [02:29&lt;00:33, 33.79s/it]</pre>
+</div>
+<div class="stderr docutils container">
+<pre class="stderr literal-block">100%|██████████| 4/4 [02:31&lt;00:00, 24.15s/it]</pre>
+</div>
+<div class="stderr docutils container">
+<pre class="stderr literal-block">100%|██████████| 4/4 [02:31&lt;00:00, 37.88s/it]</pre>
+</div>
+<div class="stderr docutils container">
+<pre class="stderr literal-block">
+</pre>
+</div>
+</div>
+</div>
+<p><strong>Stability of defection</strong></p>
+<p><strong>Check condition for defection stability</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">opponents</span> <span class="o">=</span> <span class="p">[</span><span class="n">q</span><span class="p">,</span> <span class="n">k</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">utility</span> <span class="o">=</span> <span class="n">opt_mo</span><span class="o">.</span><span class="n">tournament_utility</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">opponents</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">diff_utility</span> <span class="o">=</span> <span class="p">[</span><span class="n">sym</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">utility</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">p</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">diff_utility_at_zero</span> <span class="o">=</span> <span class="p">[</span><span class="n">expr</span><span class="o">.</span><span class="n">subs</span><span class="p">({</span><span class="n">p_1</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="n">p_2</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="n">p_3</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="n">p_4</span><span class="p">:</span> <span class="mi">0</span><span class="p">})</span><span class="o">.</span><span class="n">expand</span><span class="p">()</span> <span class="k">for</span> <span class="n">expr</span> <span class="ow">in</span> <span class="n">diff_utility</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_derivate_for_p_zeros</span><span class="p">(</span><span class="n">opponents</span><span class="p">):</span>
+    <span class="n">sums</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">opponent</span> <span class="ow">in</span> <span class="n">opponents</span><span class="p">:</span>
+        <span class="n">lhs</span> <span class="o">=</span> <span class="n">opt_mo</span><span class="o">.</span><span class="n">utility</span><span class="o">.</span><span class="n">linear_term_numerator</span><span class="p">(</span><span class="n">opponent</span><span class="p">)</span> <span class="o">*</span> <span class="n">opt_mo</span><span class="o">.</span><span class="n">utility</span><span class="o">.</span><span class="n">constant_term_denominator</span><span class="p">(</span><span class="n">opponent</span><span class="p">)</span>
+        <span class="n">rhs</span> <span class="o">=</span> <span class="n">opt_mo</span><span class="o">.</span><span class="n">utility</span><span class="o">.</span><span class="n">linear_term_denominator</span><span class="p">(</span><span class="n">opponent</span><span class="p">)</span> <span class="o">*</span> <span class="n">opt_mo</span><span class="o">.</span><span class="n">utility</span><span class="o">.</span><span class="n">constant_term_numerator</span><span class="p">(</span><span class="n">opponent</span><span class="p">)</span>
+        
+        <span class="n">denominator</span> <span class="o">=</span> <span class="n">opt_mo</span><span class="o">.</span><span class="n">utility</span><span class="o">.</span><span class="n">constant_term_denominator</span><span class="p">(</span><span class="n">opponent</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span>
+        
+        <span class="n">sums</span> <span class="o">+=</span>  <span class="p">(</span><span class="n">lhs</span> <span class="o">-</span> <span class="n">rhs</span><span class="p">)</span> <span class="o">/</span> <span class="n">denominator</span>
+
+    <span class="k">return</span> <span class="p">(</span><span class="n">sums</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">opponents</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">expression</span> <span class="o">=</span> <span class="n">get_derivate_for_p_zeros</span><span class="p">(</span><span class="n">opponents</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="o">.</span><span class="n">tqdm</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">)):</span>
+    <span class="k">assert</span> <span class="p">(</span><span class="n">diff_utility_at_zero</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">expression</span><span class="p">[</span><span class="n">i</span><span class="p">])</span><span class="o">.</span><span class="n">simplify</span><span class="p">()</span> <span class="o">==</span> <span class="mi">0</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="stderr docutils container">
+<pre class="stderr literal-block">  0%|          | 0/4 [00:00&lt;?, ?it/s]</pre>
+</div>
+<div class="stderr docutils container">
+<pre class="stderr literal-block"> 25%|██▌       | 1/4 [00:00&lt;00:02,  1.17it/s]</pre>
+</div>
+<div class="stderr docutils container">
+<pre class="stderr literal-block"> 50%|█████     | 2/4 [00:01&lt;00:01,  1.18it/s]</pre>
+</div>
+<div class="stderr docutils container">
+<pre class="stderr literal-block"> 75%|███████▌  | 3/4 [00:02&lt;00:00,  1.27it/s]</pre>
+</div>
+<div class="stderr docutils container">
+<pre class="stderr literal-block">100%|██████████| 4/4 [00:03&lt;00:00,  1.25it/s]</pre>
+</div>
+<div class="stderr docutils container">
+<pre class="stderr literal-block">100%|██████████| 4/4 [00:03&lt;00:00,  1.26it/s]</pre>
+</div>
+<div class="stderr docutils container">
+<pre class="stderr literal-block">
+</pre>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">stackplot</span><span class="p">(</span><span class="n">plot</span><span class="p">,</span> <span class="n">eco</span><span class="p">,</span> <span class="n">logscale</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+
+    <span class="n">populations</span> <span class="o">=</span> <span class="n">eco</span><span class="o">.</span><span class="n">population_sizes</span>
+    <span class="n">_</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+    <span class="n">figure</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">get_figure</span><span class="p">()</span>
+    <span class="n">turns</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">populations</span><span class="p">))</span>
+    <span class="n">pops</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="p">[</span><span class="n">populations</span><span class="p">[</span><span class="n">iturn</span><span class="p">][</span><span class="n">ir</span><span class="p">]</span> <span class="k">for</span> <span class="n">iturn</span> <span class="ow">in</span> <span class="n">turns</span><span class="p">]</span>
+        <span class="k">for</span> <span class="n">ir</span> <span class="ow">in</span> <span class="n">plot</span><span class="o">.</span><span class="n">result_set</span><span class="o">.</span><span class="n">ranking</span>
+    <span class="p">]</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">stackplot</span><span class="p">(</span><span class="n">turns</span><span class="p">,</span> <span class="o">*</span><span class="n">pops</span><span class="p">)</span>
+
+    <span class="n">ax</span><span class="o">.</span><span class="n">yaxis</span><span class="o">.</span><span class="n">tick_left</span><span class="p">()</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">yaxis</span><span class="o">.</span><span class="n">set_label_position</span><span class="p">(</span><span class="s2">&quot;right&quot;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">yaxis</span><span class="o">.</span><span class="n">labelpad</span> <span class="o">=</span> <span class="mf">25.0</span>
+
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">([</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">])</span>
+    <span class="c1">#ax.set_xlim([0.0, 10 ** 3])</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Relative population size&quot;</span><span class="p">,</span> <span class="n">fontweight</span><span class="o">=</span><span class="s1">&#39;bold&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Turn&quot;</span><span class="p">,</span> <span class="n">fontweight</span><span class="o">=</span><span class="s1">&#39;bold&#39;</span><span class="p">)</span>
+
+    <span class="n">trans</span> <span class="o">=</span> <span class="n">transforms</span><span class="o">.</span><span class="n">blended_transform_factory</span><span class="p">(</span><span class="n">ax</span><span class="o">.</span><span class="n">transAxes</span><span class="p">,</span> <span class="n">ax</span><span class="o">.</span><span class="n">transData</span><span class="p">)</span>
+    <span class="n">ticks</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">plot</span><span class="o">.</span><span class="n">result_set</span><span class="o">.</span><span class="n">ranked_names</span><span class="p">):</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.01</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mf">0.5</span><span class="p">)</span> <span class="o">*</span> <span class="mi">1</span> <span class="o">/</span> <span class="n">plot</span><span class="o">.</span><span class="n">result_set</span><span class="o">.</span><span class="n">num_players</span>
+        <span class="k">if</span> <span class="n">n</span> <span class="o">!=</span> <span class="s1">&#39;Defector&#39;</span><span class="p">:</span>
+            <span class="n">opponent_strings</span> <span class="o">=</span> <span class="p">(</span><span class="n">n</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;:&#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;[&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;]&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">))</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">)</span>
+            <span class="n">opponent</span> <span class="o">=</span> <span class="p">[</span><span class="n">Fraction</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">op</span><span class="p">))</span><span class="o">.</span><span class="n">limit_denominator</span><span class="p">()</span> <span class="k">for</span> <span class="n">op</span> <span class="ow">in</span> <span class="n">opponent_strings</span><span class="p">]</span>
+            <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;$q_{</span><span class="si">%s</span><span class="s1">}$&#39;</span><span class="o">%</span> <span class="n">i</span>
+<span class="c1">#             for p in range(3):</span>
+<span class="c1">#                 label += r&#39;\frac{&#39; + str(opponent[p].numerator) + &#39;}{&#39; + str(opponent[p].denominator) + &#39;},&#39;</span>
+<span class="c1">#             label += r&#39;\frac{&#39; + str(opponent[3].numerator) + &#39;}{&#39; + str(opponent[3].denominator) + &#39;})$&#39;</span>
+<span class="c1">#             print(label)</span>
+            <span class="n">n</span> <span class="o">=</span> <span class="n">label</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span>
+            <span class="n">n</span><span class="p">,</span>
+            <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">),</span>
+            <span class="n">xycoords</span><span class="o">=</span><span class="n">trans</span><span class="p">,</span>
+            <span class="n">clip_on</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+            <span class="n">va</span><span class="o">=</span><span class="s2">&quot;center&quot;</span><span class="p">,</span>
+            <span class="n">ha</span><span class="o">=</span><span class="s2">&quot;right&quot;</span><span class="p">,</span>
+            <span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="n">ticks</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">(</span><span class="n">ticks</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">direction</span><span class="o">=</span><span class="s2">&quot;out&quot;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_yticklabels</span><span class="p">([])</span>    
+    <span class="k">if</span> <span class="n">logscale</span><span class="p">:</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_xscale</span><span class="p">(</span><span class="s2">&quot;log&quot;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">tick</span> <span class="ow">in</span> <span class="n">ax</span><span class="o">.</span><span class="n">yaxis</span><span class="o">.</span><span class="n">get_majorticklabels</span><span class="p">():</span>  <span class="c1"># example for xaxis</span>
+        <span class="n">tick</span><span class="o">.</span><span class="n">set_fontsize</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span> 
+        
+    <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span> <span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">figure</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">seed</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">10</span><span class="p">):</span>
+    <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="n">seed</span><span class="p">)</span>
+    <span class="n">opponents</span> <span class="o">=</span> <span class="p">[[</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">(),</span> <span class="mi">5</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">)]</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">)]</span>
+
+    <span class="n">derivative</span> <span class="o">=</span> <span class="n">get_derivate_for_p_zeros</span><span class="p">(</span><span class="n">opponents</span><span class="p">)</span>
+    
+    <span class="k">if</span> <span class="nb">all</span><span class="p">([</span><span class="n">el</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="k">for</span> <span class="n">el</span> <span class="ow">in</span> <span class="n">derivative</span><span class="p">]):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Found at: </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">seed</span><span class="p">)</span>
+        <span class="k">break</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Found at: 5
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">defection_stable_opponents_set</span> <span class="o">=</span> <span class="p">[</span><span class="n">axl</span><span class="o">.</span><span class="n">MemoryOnePlayer</span><span class="p">(</span><span class="n">ps</span><span class="p">,</span> <span class="n">initial</span><span class="o">=</span><span class="n">D</span><span class="p">)</span> <span class="k">for</span> <span class="n">ps</span> <span class="ow">in</span> <span class="n">opponents</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="n">axl</span><span class="o">.</span><span class="n">Defector</span><span class="p">()]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">tournament</span> <span class="o">=</span> <span class="n">axl</span><span class="o">.</span><span class="n">Tournament</span><span class="p">(</span><span class="n">defection_stable_opponents_set</span><span class="p">)</span>
+<span class="n">results</span> <span class="o">=</span> <span class="n">tournament</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">progress_bar</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">eco</span> <span class="o">=</span> <span class="n">axl</span><span class="o">.</span><span class="n">Ecosystem</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
+<span class="n">eco</span><span class="o">.</span><span class="n">reproduce</span><span class="p">(</span><span class="mi">500</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">plot</span> <span class="o">=</span> <span class="n">axl</span><span class="o">.</span><span class="n">Plot</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
+<span class="n">p</span> <span class="o">=</span> <span class="n">stackplot</span><span class="p">(</span><span class="n">plot</span><span class="p">,</span> <span class="n">eco</span><span class="p">,)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/2_Stability_of_defection_43_0.png" src="_images/2_Stability_of_defection_43_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">img_path</span><span class="o">.</span><span class="n">joinpath</span><span class="p">(</span><span class="s2">&quot;population_defection_takes_over.pdf&quot;</span><span class="p">),</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s2">&quot;tight&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 432x288 with 0 Axes&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">seed</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5000</span><span class="p">):</span>
+    <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+    <span class="n">opponents</span> <span class="o">=</span> <span class="p">[[</span><span class="nb">round</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">(),</span> <span class="mi">5</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">)]</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">)]</span>
+    
+    <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="n">seed</span><span class="p">)</span>
+    <span class="n">other_opponent</span> <span class="o">=</span><span class="p">[[</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">)]]</span>
+    
+    <span class="n">derivative</span> <span class="o">=</span> <span class="n">get_derivate_for_p_zeros</span><span class="p">(</span><span class="n">opponents</span> <span class="o">+</span> <span class="n">other_opponent</span><span class="p">)</span>
+    <span class="k">if</span> <span class="nb">all</span><span class="p">([</span><span class="n">el</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="k">for</span> <span class="n">el</span> <span class="ow">in</span> <span class="n">derivative</span><span class="p">]):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Found at: </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">seed</span><span class="p">)</span>
+        <span class="k">break</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">defection_stable_opponents_set</span> <span class="o">=</span> <span class="p">[</span><span class="n">axl</span><span class="o">.</span><span class="n">MemoryOnePlayer</span><span class="p">(</span><span class="n">ps</span><span class="p">,</span> <span class="n">initial</span><span class="o">=</span><span class="n">C</span><span class="p">)</span> <span class="k">for</span> <span class="n">ps</span> <span class="ow">in</span> <span class="n">opponents</span><span class="p">]</span>
+<span class="n">defection_stable_opponents_set</span> <span class="o">+=</span> <span class="p">[</span><span class="n">axl</span><span class="o">.</span><span class="n">Defector</span><span class="p">()]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">tournament</span> <span class="o">=</span> <span class="n">axl</span><span class="o">.</span><span class="n">Tournament</span><span class="p">(</span><span class="n">defection_stable_opponents_set</span><span class="p">)</span>
+<span class="n">results</span> <span class="o">=</span> <span class="n">tournament</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">progress_bar</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">eco</span> <span class="o">=</span> <span class="n">axl</span><span class="o">.</span><span class="n">Ecosystem</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
+<span class="n">eco</span><span class="o">.</span><span class="n">reproduce</span><span class="p">(</span><span class="mi">50000</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">plot</span> <span class="o">=</span> <span class="n">axl</span><span class="o">.</span><span class="n">Plot</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
+<span class="n">p</span> <span class="o">=</span> <span class="n">stackplot</span><span class="p">(</span><span class="n">plot</span><span class="p">,</span> <span class="n">eco</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">img_path</span><span class="o">.</span><span class="n">joinpath</span><span class="p">(</span><span class="s2">&quot;population_defection_fails.pdf&quot;</span><span class="p">),</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s2">&quot;tight&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/2_Stability_of_defection_48_0.png" src="_images/2_Stability_of_defection_48_0.png" />
+</div>
+</div>
+</div>
+
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="1_Utility_and_Best responses_to_memory-one_players.html" title="previous page">Stability of defection, optimisation of strategies and the limits of memory in the PD.</a>
+
+    </div>
+    <footer class="footer">
+  <div class="container">
+    <p>
+          &copy; Copyright .<br/>
+        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.4.4.<br/>
+    </p>
+  </div>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+
+    <script src="_static/js/index.js"></script>
+    
+  </body>
+</html>
