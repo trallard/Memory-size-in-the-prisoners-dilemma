@@ -6,6 +6,7 @@ on:
     paths:
       - 'tex/**'
       - 'img/**'
+      - 'nbs/**'
   pull_request:
     branches: ["master"]
 

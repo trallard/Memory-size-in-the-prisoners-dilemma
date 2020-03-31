@@ -45,10 +45,11 @@ jobs:
         run: |
           export CACHE=$(conda info -a | grep cache)
           echo "::set-env name=CACHE::$CACHE"
+          echo $CACHE
 
       - uses: actions/cache@v1
         with:
-          path: ${{ steps.conda-cache.outputs.dir }}
+          path: $CACHE
           key: ${{ runner.os }}-conda-${{ hashFiles('**/environment.yml') }}
           restore-keys: |
             ${{ runner.os }}-conda-

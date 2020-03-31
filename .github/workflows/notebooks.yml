@@ -30,8 +30,9 @@ jobs:
           conda-channels: anaconda
           activate-conda: false
 
-      - name: Install Python dependencies
+      - name: "Install dependencies"
         run: |
+          conda info -a
           conda env create python=${{ matrix.python-version }} -f environment.yml
           conda info --envs
           eval "$(conda shell.bash hook)"
