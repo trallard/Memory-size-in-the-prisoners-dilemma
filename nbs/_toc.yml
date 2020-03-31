@@ -1,8 +1,5 @@
-file: "3_Numerical_experiments"
+file: "1_Utility_and_Best responses_to_memory-one_players"
+title: Utility And Best responses To Memory-one Players
 pages:
-  # - file: "0_2_Proofs"
-  # - file: "0_3_Preview_data"
   - file: 2_Stability_of_defection
     title: Stability Of Defection
-  - file: 1_Utility_and_Best responses_to_memory-one_players
-    title: Utility And Best responses To Memory-one Players
