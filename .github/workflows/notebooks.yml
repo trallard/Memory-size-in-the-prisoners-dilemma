@@ -46,6 +46,7 @@ jobs:
 
       - name: Build book
         run: |
+          eval "$(conda shell.bash hook)"
           conda activate opt-mo
           python -m jupyter book build --config nbs/_config.yml --toc nbs/_toc.yml ./nbs
 
