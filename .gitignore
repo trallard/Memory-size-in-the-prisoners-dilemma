@@ -41,3 +41,5 @@ img/Fingerprints/*
 
 build/lib/opt_mo/*
 dist/*
+
+.pytest_cache/
