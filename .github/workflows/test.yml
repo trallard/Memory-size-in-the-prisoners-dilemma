@@ -46,11 +46,11 @@ jobs:
       - name: "Install dependencies"
         run: |
           conda info -a
-          conda create -y --name opt-mo python=${{ matrix.python-version }}
+          conda create -y --name opt-mo python=${{ matrix.python-version }} 
           conda info --envs
           eval "$(conda shell.bash hook)"
           conda activate opt-mo
-          conda install --file environment.yml -q
+          conda env update --file environment.yml --prune -q
           python -m ipykernel install --user --name opt-mo 
           python -m pip install --upgrade pip --progress-bar off
           python -m pip install --upgrade tox tox-gh-actions 

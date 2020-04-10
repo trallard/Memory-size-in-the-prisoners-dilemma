@@ -1,4 +1,3 @@
-name: opt-mo
 channels:
   - defaults
 dependencies:
