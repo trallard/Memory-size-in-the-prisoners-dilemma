@@ -49,6 +49,7 @@ jobs:
           conda create -y --name opt-mo python=${{ matrix.python-version }} 
           conda info --envs
           eval "$(conda shell.bash hook)"
+          source deactivate
           conda activate opt-mo
           conda env update --file environment.yml --prune -q
           python -m ipykernel install --user --name opt-mo 
@@ -58,5 +59,6 @@ jobs:
 
       - name: "Run tox targets for ${{ matrix.python-version }}"
         run: |
+          conda activate opt-mo
           which python 
-          tox -e py
+          python -m tox
