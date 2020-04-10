@@ -1,0 +1,12 @@
+attrs==19.1.0
+axelrod==4.4.0
+black==18.9b0
+sympy==1.2.0
+scikitoptimize==0.5.2
+jupyter==1.0.0
+jupyterconsole==5.2.0
+ipython==6.4.0
+pytest==4.0.1
+pytestcov==2.7.1
+sqlalchemy==1.2.17
+fsspec==0.3.3
